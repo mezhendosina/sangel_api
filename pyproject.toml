@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "sangel"
+version = "0.1.0"
+description = ""
+authors = ["42494 <4249495@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.110.0"
+uvicorn = {extras = ["standard"], version = "^0.27.1"}
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.28"}
+asyncpg = "^0.29.0"
+pydantic-settings = "^2.2.1"
+alembic = "^1.13.1"
+pydantic = {extras = ["internal"], version = "^2.6.3"}
+pyjwt = {extras = ["crypto"], version = "^2.8.0"}
+fastapi-jwt = "^0.2.0"
+twilio = "^9.0.2"
+bcrypt = "^4.1.2"
+python-multipart = "^0.0.9"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
