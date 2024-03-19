@@ -54,7 +54,7 @@ async def auth_user(user_auth: UserAuth, session: AsyncSession = Depends(db_help
         return TokenInfo(access_token=access_token, token_type="Bearer")
     new_code_otp = generate_otp_code()
     await crud.update_user(session=session, user=user, user_update=UserUpdate(code=new_code_otp))
-    send_email(subject="Sangel | OTP code", message=f"Your OTP code is {new_code_otp}", email_receiver=user.email)
+    #send_email(subject="Sangel | OTP code", message=f"Your OTP code is {new_code_otp}", email_receiver=user.email)
     return JSONResponse(status_code=status.HTTP_405_METHOD_NOT_ALLOWED, content={"id": user.id, "detail": f"User is inactive, The code has just been sent, check email {user.email}"})
 
 

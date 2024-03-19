@@ -29,7 +29,7 @@ async def create_user(session: AsyncSession, user_in: UserCreate) -> User:
     user.status = Status(status_text_id=1)
     session.add(user)
     await session.commit()
-    send_email(subject="Sangel | OTP code", message=f"Your OTP code is {code_otp}", email_receiver=user_in.email)
+    # send_email(subject="Sangel | OTP code", message=f"Your OTP code is {code_otp}", email_receiver=user_in.email)
     return user
 
 
