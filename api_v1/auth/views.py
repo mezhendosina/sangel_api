@@ -51,7 +51,7 @@ async def login_user(user_in: UserCreate, session: AsyncSession = Depends(db_hel
             status_code=status.HTTP_409_CONFLICT,
             detail=f"User with email '{user_in.email}' already exist!",
         )
-    return UserInfo(email=user_in.email, name=user_in.name, surname=user_in.surname)
+    return UserInfo(id=0, email=user_in.email, name=user_in.name, surname=user_in.surname)
 
 
 @router.post("/", response_model=TokenInfo)
